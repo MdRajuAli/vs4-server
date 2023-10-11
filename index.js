@@ -70,7 +70,7 @@ async function run() {
 
     app.patch('/updatePeople/:id', async (req, res) => {
       const user = req.body;
-      // console.log(user);
+      console.log(user);
       const id = req.params.id
       const filter = { _id: new ObjectId(id) }
       const options = { upsert: true }
@@ -78,15 +78,15 @@ async function run() {
       const updatedPeople = {
         $set: {
           name: user.name,
-          phone: user.phone,
-          passport: user.passport,
-          sivilId: user.sivilId,
-          nationality: user.nationality,
-          occupation: user.occupation,
-          visa: user.visa,
-          startDate: user.startDate,
+          // phone: user.phone,
+          // passport: user.passport,
+          // sivilId: user.sivilId,
+          // nationality: user.nationality,
+          // occupation: user.occupation,
+          // visa: user.visa,
+          // startDate: user.startDate,
           expire: user.expire,
-          workingPlace: user.workingPlace
+          workigPlace: user.workigPlace
         }
       }
       const result = await vsFourPeople.updateOne(filter, updatedPeople, options)
