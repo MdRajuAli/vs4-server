@@ -129,4 +129,4 @@ run().catch(console.dir);
 
 
 
-app.listen(port)
+app.listen(port,()=>console.log('Server is running'))
